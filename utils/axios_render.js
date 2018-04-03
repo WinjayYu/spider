@@ -7,7 +7,7 @@
 var axios = require('axios');
 var qs = require('qs');
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'http://localhost:3005';
 
 //POST传参序列化
 axios.interceptors.request.use(
