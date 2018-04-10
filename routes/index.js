@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const init = function (app) {
+const init = function (app, staticPath) {
   const index = require('./web/index')
   const photo_type = require('./api/photo/photo_type')
   const photo_list = require('./api/photo/photo_list')
@@ -69,7 +69,9 @@ const init = function (app) {
   app.use('/web/photo', web_photo)
   app.use('/web/jandan', web_jandan)
 
-  app.use('/web/huaban', require('./web/huaban'))
+  app.use(staticPath + '/web/huaban', require('./web/huaban'))
+  app.use(staticPath + '/web/home', require('./web/home'))
+  app.use(staticPath + '/web/web_frame', require('./web/web_frame'))
 
 }
 

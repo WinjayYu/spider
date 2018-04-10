@@ -6,5 +6,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
   <meta name="format-detection" content="telephone=no,address=no"/>
-  <title>home</title>
-  <link rel="stylesheet" href="/public/css/index.css">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="<%=staticPath%>/css/index.css">
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="<%= staticPath %>/js/footer.js"></script>
+<body>
+<div class="logo">
+  <img src="<%= staticPath %>/images/logo.png" alt="" class="logo_img">
+  <span class="comp_name">IT Dog</span>
+</div>
+<div class="menu">
+  <a href="<%= staticPath %>/web/web_frame" class="menu_item" data-search="web_frame">前端框架</a>
+  <a href="<%= staticPath %>/web/home" class="menu_item" data-search="home">前端日报</a>
+  <a href="<%= staticPath %>/web/huaban" class="menu_item" data-search="huaban">妹子图</a>
+</div>

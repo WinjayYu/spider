@@ -14,9 +14,9 @@ var routes = require('./routes/index');
 
 app.set('views', path.join(__dirname, 'views/web'));
 app.set('view engine', 'ejs');
-
-routes.init(app);
-app.use(express.static(path.join(__dirname, 'public'))); // 设置静态资源地址
+app.locals.staticPath = '/spider';
+routes.init(app, app.locals.staticPath);
+app.use(app.locals.staticPath, express.static(path.join(__dirname, 'public'))); // 设置静态资源地址
 app.use('/docs', express.static('docs')); // 设置静态资源地址
 app.all('*', function(req, res, next) {
     // res.header('Access-Control-Allow-Origin', '*')

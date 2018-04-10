@@ -1,15 +1,14 @@
-'use strict';
 var express = require('express');
-const router = express.Router();
+var router = express.Router();
 const myajax = require('../../utils/axios_render')
 
 router.get('/', (req, res, next) => {
   myajax
-    .get('api/huaban', {})
+    .get('api/daily_list', {})
     .then((response) => {
-      res.render('huaban', {
+      res.render('home', {
         data: response['data'],
-        title: '妹子图'
+        title: '前端框架'
       })
     })
     .catch (err => {
@@ -18,4 +17,3 @@ router.get('/', (req, res, next) => {
 })
 
 module.exports = router;
-

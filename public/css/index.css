@@ -6,7 +6,7 @@ em,i{font-style:normal;}
 a,a:visited{border:none;text-decoration:none;color:#000}
 fieldset,img,input{border:none;}
 input,textarea{outline:none;resize:none;-webkit-appearance:none;}
-body{word-wrap:break-word;font-size:12px; font-family: /* En */ "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue" , "Helvetica", "Arial", /* Cn */ "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", "sans-serif"; line-height:1.6; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none; -webkit-user-select:none;}
+body{word-huaban:break-word;font-size:12px; font-family: /* En */ "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue" , "Helvetica", "Arial", /* Cn */ "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", "sans-serif"; line-height:1.6; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none; -webkit-user-select:none;}
 /* public */
 .clear{zoom:1;} .clear:before,
                 .clear:after{display:block;content:"";}
@@ -17,17 +17,38 @@ body{word-wrap:break-word;font-size:12px; font-family: /* En */ "-apple-system",
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration{display:none;}
 
 
-.home .list {
+.logo .comp_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo{
+    padding: 5px 15px 0;
+}
+
+.menu {
+    font-size: 0px;
+    padding: 7px 15px;
+    background-color: #111;
+}
+
+.menu .menu_item {
+    color: #aaa;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.wrap .list {
     /*padding: 0 10px;*/
 }
 
-.home .post {
+.wrap .post {
     padding: 10px 15px;
     border-bottom: 1px #ccc solid;
     position: relative;
 }
 
-.home .post .left_img{
+.huaban .post .left_img{
     display: flex;
     width: 50px;
     height: 50px;
@@ -37,11 +58,11 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     margin-right: 10px;
 }
 
-.home .post .avatar {
+.huaban .post .avatar {
     width: 100%;
 }
 
-.home .post .like {
+.huaban .post .like {
     float: right;
     font-family: sans-serif;
     line-height: 15px;
@@ -49,37 +70,50 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     font-size: 12px;
 }
 
-.home .post .cont {
+.huaban .post .cont {
     overflow: hidden;
 }
 
 
 
-.home .girl {
+.huaban .girl {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
-.home .girl .thetitle{
+.huaban .girl .thetitle{
     font-weight: bold;
     font-size: 16px;
 }
 
-.home .girl .content .ima {
+.huaban .girl .content .ima {
     max-width: 100%;
     margin-top: 12px;
 }
 
-.home .girl .content .intro {
+.huaban .girl .content .intro {
     font-size: 14px;
     color: black;
 }
 
-.home .girl .like {
+.huaban .girl .like {
     font-size: 14px;
     color: #4285f4;
 }
 
 .dropload-down  {
     text-align: center;
+}
+
+.wrap .thetitle {
+    font-size: 18px;
+}
+
+.wrap .description {
+    font-size: 15px;
+    color: #333;
+}
+
+.active {
+    color: #fff!important;
 }

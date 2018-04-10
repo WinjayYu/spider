@@ -1,0 +1,66 @@
+<%- include('../common/header.ejs', {title:title}) %>
+  <div class="wrap huaban">
+    <div class="list">
+      <!--<% data.forEach(function(v, i){%>-->
+        <!--<div class="post clear">-->
+          <!--<span class="like"><%= v.like %></span>-->
+          <!--<div class="left_img fl">-->
+            <!--<a href="<%= v.url %>">-->
+              <!--<img src="<%= v.url %>" alt="" class="avatar">-->
+            <!--</a>-->
+          <!--</div>-->
+          <!--<div class="cont">-->
+            <!--<a href="<%= v.url %>">-->
+              <!--<h2 class="thetitle"><%= v.title %></h2>-->
+              <!--<p class="intro"><%= v.desc %></p>-->
+            <!--</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--<% }) %>-->
+      <% data.forEach(function(v, i){%>
+        <div class="girl">
+          <div class="top clear">
+            <span class="thetitle"><%= v.title %></span>
+            <span class="like fr"><%= v.like %></span>
+          </div>
+          <div class="content">
+            <a href="<%= v.url %>">
+              <img src="<%= v.url %>" alt="" class="ima" />
+              <p class="intro"><%= v.desc %></p>
+            </a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <script src="<%=staticPath%>/js/dropload.js"></script>
+  <script>
+    $('.list').dropload({
+      scrollArea : window,
+      autoLoad: true,
+      domDown : {
+        domClass   : 'dropload-down',
+        domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+        domNoData  : '<div class="dropload-noData">暂无数据</div>'
+      },
+      loadDownFn : function(me) {
+        $.ajax({
+          type: 'GET',
+          url: '/web/huaban',
+          dataType: 'json',
+          success: function (data) {
+            console.log(data);
+            me.resetload();
+          },
+          error: function(xhr, type){
+            me.noData();
+            // 即使加载出错，也得重置
+            me.resetload();
+          }
+        })
+      }
+    })
+  </script>
+</body>
+</html>
